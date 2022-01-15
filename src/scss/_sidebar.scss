@@ -1,0 +1,96 @@
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @extend %grid-center;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: $ease-trans;
+    z-index: 100;
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        .sidebar {
+            transform: scale(1);
+        }
+    }
+}
+
+.sidebar {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-gap: 2rem;
+    padding: 2rem;
+    border-radius: $radius;
+    background-color: $white;
+    transform: scale(0);
+    transition: $ease-trans;
+    &-menu {
+        overflow: auto;
+        &-item {
+            margin-bottom: 2rem;
+            h4 {
+                margin-bottom: 1.5rem;
+            }
+            ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 1rem;
+                a {
+                    display: flex;
+                    column-gap: 0.5rem;
+                    color: $black;
+                    text-transform: capitalize;
+                    letter-spacing: $spacing;
+                    svg {
+                        color: $blue;
+                    }
+                    &:hover {
+                        color: $red;
+                        svg {
+                            color: $red;
+                        }
+                    }
+                }
+                &.violet {
+                    svg {
+                        color: $violet;
+                    }
+                }
+                &.gold {
+                    svg {
+                        color: $gold;
+                    }
+                }
+            }
+        }
+    }
+    &-footer {
+        text-align: center;
+    }
+    &-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        border: none;
+        background-color: transparent;
+        color: $red;
+        font-size: 1.4rem;
+        transition: $ease-trans;
+        &:hover {
+            transform: rotate(270deg);
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .sidebar-overlay {
+        display: none;
+    }
+}

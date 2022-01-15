@@ -1,0 +1,46 @@
+.hero {
+    height: 100vh;
+    @extend %grid-center;
+    margin-top: -5rem;
+    background: url('../images/hero.svg') center/cover;
+    &-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 2rem;
+        &-info {
+            align-self: center;
+            h1 {
+                margin-bottom: 2rem;
+                color: $dark-blue;
+                font-size: 3rem;
+                line-height: 1.25;
+            }
+            p {
+                margin-bottom: 2rem;
+                font-size: 1.2rem;
+                letter-spacing: $spacing;
+            }
+        }
+        &-image {
+            text-align: center;
+            @include for-size(large) {
+                img {
+                    width: 15rem;
+                }
+            }
+        }
+        @include for-size(middle) {
+            & {
+                grid-template-columns: unset;
+                &-info {
+                    h1 {
+                        font-size: 2.5rem;
+                    }
+                }
+                &-image {
+                    display: none;
+                }
+            }
+        }
+    }
+}

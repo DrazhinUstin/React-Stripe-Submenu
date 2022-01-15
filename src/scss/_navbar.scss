@@ -1,0 +1,41 @@
+.navbar {
+    height: 5rem;
+    @extend %flex-between;
+    user-select: none;
+    &-header {
+        @extend %flex-between;
+        button {
+            display: none;
+            border: none;
+            background-color: inherit;
+            color: $white;
+            font-size: 1.4rem;
+            transition: $ease-trans;
+            &:hover {
+                color: $blue;
+            }
+        }
+        @include for-size(middle) {
+            width: 100%;
+            button {
+                display: block;
+            }
+        }
+    }
+    &-menu {
+        display: flex;
+        column-gap: 2rem;
+        li {
+            color: $white;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            letter-spacing: $spacing;
+        }
+        @include for-size(middle) {
+            display: none;
+            & ~ button {
+                display: none;
+            }
+        }
+    }
+}

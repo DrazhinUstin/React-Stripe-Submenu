@@ -1,0 +1,33 @@
+$black: #1c1c1c;
+$white: #ffffff;
+$red: #db1919;
+$blue: #0149a7;
+$dark-blue: #0a2540;
+$gold: #c2a00b;
+$violet: #a10a9a;
+$radius: 1rem;
+$spacing: 0.1rem;
+$ease-trans: all 0.4s ease;
+
+%grid-center {
+    display: grid;
+    place-items: center;
+}
+
+%flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin for-size($size) {
+    @if ($size == large) {
+        @media screen and (max-width: 1024px) {
+            @content;
+        }
+    } @else if ($size == middle) {
+        @media screen and (max-width: 768px) {
+            @content;
+        }
+    }
+}
