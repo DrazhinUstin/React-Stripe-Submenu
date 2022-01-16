@@ -1,9 +1,13 @@
 import React from 'react';
 import phone from '../images/phone.svg';
 
-const Hero = () => {
+const Hero = ({ isSubmenuOpen, closeSubmenu }) => {
+    const handleMouseOver = () => {
+        if (isSubmenuOpen) closeSubmenu();
+    };
+
     return (
-        <section className='hero'>
+        <section className='hero' onMouseOver={handleMouseOver}>
             <div className='hero-content section-center'>
                 <div className='hero-content-info'>
                     <h1>Payments Infrastructure For The Internet</h1>

@@ -1,0 +1,63 @@
+.submenu {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translate(-50%) scale(0);
+    visibility: hidden;
+    padding: 2rem;
+    border-radius: $radius;
+    background-color: $white;
+    box-shadow: $shadow;
+    transition: $ease-trans;
+    z-index: 100;
+    @include for-size(middle) {
+        display: none;
+    }
+    &.show {
+        transform: translate(-50%) scale(1);
+        visibility: visible;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        border-bottom: 0.5rem solid $white;
+        border-left: 0.5rem solid transparent;
+        border-right: 0.5rem solid transparent;
+        background-color: transparent;
+    }
+    h4 {
+        margin-bottom: 1.5rem;
+    }
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+        a {
+            display: flex;
+            column-gap: 0.5rem;
+            color: $black;
+            &:hover {
+                color: $red;
+                svg {
+                    color: $red;
+                }
+            }
+            svg {
+                color: $blue;
+            }
+        }
+        &.violet {
+            svg {
+                color: $violet;
+            }
+        }
+        &.gold {
+            svg {
+                color: $gold;
+            }
+        }
+    }
+}

@@ -7,6 +7,7 @@ $gold: #c2a00b;
 $violet: #a10a9a;
 $radius: 1rem;
 $spacing: 0.1rem;
+$shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 $ease-trans: all 0.4s ease;
 
 %grid-center {
@@ -27,6 +28,10 @@ $ease-trans: all 0.4s ease;
         }
     } @else if ($size == middle) {
         @media screen and (max-width: 768px) {
+            @content;
+        }
+    } @else if ($size == small) {
+        @media screen and (max-width: 400px) {
             @content;
         }
     }

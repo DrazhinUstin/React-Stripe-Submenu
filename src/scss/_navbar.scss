@@ -1,7 +1,9 @@
 .navbar {
+    position: relative;
     height: 5rem;
     @extend %flex-between;
     user-select: none;
+    z-index: 1;
     &-header {
         @extend %flex-between;
         button {
@@ -24,8 +26,8 @@
     }
     &-menu {
         display: flex;
-        column-gap: 2rem;
         li {
+            padding: 1rem;
             color: $white;
             font-size: 1.2rem;
             text-transform: capitalize;

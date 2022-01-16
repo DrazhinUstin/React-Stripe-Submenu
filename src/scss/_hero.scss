@@ -11,7 +11,6 @@
             align-self: center;
             h1 {
                 margin-bottom: 2rem;
-                color: $dark-blue;
                 font-size: 3rem;
                 line-height: 1.25;
             }
@@ -30,15 +29,23 @@
             }
         }
         @include for-size(middle) {
-            & {
-                grid-template-columns: unset;
-                &-info {
-                    h1 {
-                        font-size: 2.5rem;
-                    }
+            grid-template-columns: unset;
+            &-info {
+                h1 {
+                    font-size: 2.5rem;
                 }
-                &-image {
-                    display: none;
+            }
+            &-image {
+                display: none;
+            }
+        }
+        @include for-size(small) {
+            &-info {
+                h1 {
+                    font-size: 2rem;
+                }
+                p {
+                    font-size: 1rem;
                 }
             }
         }

@@ -2,9 +2,9 @@ import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 import data from '../data';
 
-const Sidebar = () => {
+const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
     return (
-        <div className='sidebar-overlay'>
+        <div className={`sidebar-overlay ${isSidebarOpen ? 'show' : ''}`}>
             <aside className='sidebar'>
                 <ul className='sidebar-menu'>
                     {data.map((item, index) => {
@@ -32,7 +32,7 @@ const Sidebar = () => {
                 <footer className='sidebar-footer'>
                     <button className='btn'>sign in</button>
                 </footer>
-                <button className='sidebar-close-btn'>
+                <button className='sidebar-close-btn' onClick={closeSidebar}>
                     <FaTimes />
                 </button>
             </aside>
