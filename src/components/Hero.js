@@ -1,7 +1,10 @@
 import React from 'react';
+import { useGlobalContext } from '../context';
 import phone from '../images/phone.svg';
 
-const Hero = ({ isSubmenuOpen, closeSubmenu }) => {
+const Hero = () => {
+    const { isSubmenuOpen, closeSubmenu } = useGlobalContext();
+
     const handleMouseOver = () => {
         if (isSubmenuOpen) closeSubmenu();
     };

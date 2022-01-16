@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useGlobalContext } from '../context';
 import { FaBars } from 'react-icons/fa';
 import Submenu from './Submenu';
 import data from '../data';
 import logo from '../images/logo.svg';
 
-const Navbar = ({ openSidebar, isSubmenuOpen, openSubmenu, closeSubmenu }) => {
+const Navbar = () => {
+    const { openSidebar, isSubmenuOpen, openSubmenu, closeSubmenu } = useGlobalContext();
+
     const [submenuData, setSubmenuData] = useState({
         title: '',
         color: '',

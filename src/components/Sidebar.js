@@ -1,8 +1,10 @@
 import React from 'react';
+import { useGlobalContext } from '../context';
 import { FaTimes } from 'react-icons/fa';
 import data from '../data';
 
-const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
+const Sidebar = () => {
+    const { isSidebarOpen, closeSidebar } = useGlobalContext();
     return (
         <div className={`sidebar-overlay ${isSidebarOpen ? 'show' : ''}`}>
             <aside className='sidebar'>
